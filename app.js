@@ -1,18 +1,11 @@
-Seattle = {
+Seattle = { 
   min: 23,
   max: 65,
   avg: 6.3,
-  avgCookies: function () {
+  avgCookies: function () { //average cookies per customer per hour
     return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
   },
-  total: function () {
-    let total = 0;
-    for (let i = 0; i < 14; i++) {
-      total += this.avgCookies();
-    }
-    return total;
-  },
-  addHtml: function () {
+  addHtml: function () { //adds html to the table
     let html = `
     <h1>Seattle</h1>
     <table>
@@ -80,6 +73,13 @@ Seattle = {
         <h2>Total: ${this.total()} cookies</h2>
         `;
     document.getElementById("seattle").innerHTML = html;
+  },  
+  total: function () { //total cookies sold
+    let total = 0;
+    for (let i = 0; i < 14; i++) {
+      total += this.avgCookies();
+    }
+    return total;
   },
 };
 
@@ -87,17 +87,17 @@ Tokyo = {
   min: 3,
   max: 24,
   avg: 1.2,
-  avgCookies: function () {
+  avgCookies: function () { //average cookies per customer per hour
     return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
   },
-  total: function () {
+  total: function () { //total cookies sold
     let total = 0;
     for (let i = 0; i < 14; i++) {
       total += this.avgCookies();
     }
     return total;
   },
-  addHtml: function () {
+  addHtml: function () { //adds html to the table
     let html = `
     <h1>Tokyo</h1>
     <table>
@@ -172,17 +172,17 @@ Dubai = {
   min: 11,
   max: 38,
   avg: 3.7,
-  avgCookies: function () {
+  avgCookies: function () {  //average cookies per customer per hour
     return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
   },
-  total: function () {
+  total: function () { //total cookies sold
     let total = 0;
     for (let i = 0; i < 14; i++) {
       total += this.avgCookies();
     }
     return total;
   },
-  addHtml: function () {
+  addHtml: function () {    //adds html to the table
     let html = `
     <h1>Dubai</h1>
     <table>
@@ -257,17 +257,17 @@ Paris = {
   min: 20,
   max: 38,
   avg: 2.3,
-  avgCookies: function () {
+  avgCookies: function () { //average cookies per customer per hour
     return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
   },
-  total: function () {
+  total: function () {  //total cookies sold
     let total = 0;
     for (let i = 0; i < 14; i++) {
       total += this.avgCookies();
     }
     return total;
   },
-  addHtml: function () {
+  addHtml: function () {    //adds html to the table
     let html = `
     <h1>Paris</h1>
     <table>
@@ -342,17 +342,17 @@ Lima = {
   min: 2,
   max: 16,
   avg: 4.6,
-  avgCookies: function () {
+  avgCookies: function () { //average cookies per customer per hour
     return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
   },
-  total: function () {
+  total: function () { //total cookies sold
     let total = 0;
     for (let i = 0; i < 14; i++) {
       total += this.avgCookies();
     }
     return total;
   },
-  addHtml: function () {
+  addHtml: function () { //adds html to the table
     let html = `
     <h1>Lima</h1>
     <table>
@@ -434,22 +434,22 @@ function addTable(){
     let header2 = document.createElement("th");
 
     //Content
-    header1.innerHTML = "Time " ;
+    header1.innerHTML = "Time " ; 
     header2.innerHTML = "Cookies " ;
-    header.appendChild(header1);
-    header.appendChild(header2);
-    table.appendChild(header);
-    h1.innerHTML = "Seattle";
-    total.innerHTML = "Total: " + Seattle.total() + " cookies";
+    header.appendChild(header1); //append header1 to header
+    header.appendChild(header2); //append header2 to header
+    table.appendChild(header); //append header to table
+    h1.innerHTML = "Seattle"; //set h1 content
+    total.innerHTML = "Total: " + Seattle.total() + " cookies"; //total cookies
 
-    for(let i = 6; i <= 12; i++){
-        let row = document.createElement("tr");
-        let time = document.createElement("td");
-        time.innerHTML = i + "am: " + " " + Seattle.avgCookies() + " cookies";
+    for(let i = 6; i <= 12; i++){ //loop for 6am to 12pm
+        let row = document.createElement("tr"); //create row
+        let time = document.createElement("td"); //create td for time
+        time.innerHTML = i + "am: " + " " + Seattle.avgCookies() + " cookies"; //set time content
         row.appendChild(time);
         table.appendChild(row);
     }
-    for(let i = 1; i <= 7; i++){
+    for(let i = 1; i <= 7; i++){ //loop for 1pm to 7pm
         let row = document.createElement("tr");
         let time = document.createElement("td");
         time.innerHTML = i + "pm: " + " " + Seattle.avgCookies() + " cookies";
@@ -458,9 +458,9 @@ function addTable(){
     }
 
     //Append
-    document.getElementById("seattle").appendChild(h1);
-    document.getElementById("seattle").appendChild(table);
-    document.getElementById("seattle").appendChild(total);
+    document.getElementById("seattle").appendChild(h1); //append h1 to seattle
+    document.getElementById("seattle").appendChild(table); //append table to seattle
+    document.getElementById("seattle").appendChild(total); //append total to seattle
 }
 
 addTable();
