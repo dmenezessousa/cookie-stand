@@ -67,8 +67,8 @@ Store.prototype.renderHeader = function () {
     tr.appendChild(th);
     table.appendChild(tr);
   }
-  th.textContent = "Total";
-  tr.appendChild(th);
+  // th.textContent = "Total";
+  // tr.appendChild(th);
   table.appendChild(tr);
 };
 
@@ -134,14 +134,15 @@ Store.prototype.renderAll = function () {
 let addStore = document.getElementById("addStore_form");
 addStore.addEventListener("submit", function (event) {
   event.preventDefault();
-  let name = event.target.name.value;
-  let minCust = event.target.minCust.value;
-  let maxCust = event.target.maxCust.value;
-  let avgSales = event.target.avgSales.value;
+  let name = event.target.storeName.value;
+  let minCust = parseInt(event.target.minCust.value);
+  let maxCust = parseInt(event.target.maxCust.value);
+  let avgSales = parseInt(event.target.avgSales.value);
   new Store(name, minCust, maxCust, avgSales);
   event.target.reset();
   allStores[allStores.length - 1].render();
-}),
-  Store.prototype.renderHeader();
+});
+
+Store.prototype.renderHeader();
 Store.prototype.renderAll();
 Store.prototype.renderFooter();
