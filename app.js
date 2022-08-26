@@ -131,6 +131,17 @@ Store.prototype.renderAll = function () {
   }
 };
 
-Store.prototype.renderHeader();
+let addStore = document.getElementById("addStore_form");
+addStore.addEventListener("submit", function (event) {
+  event.preventDefault();
+  let name = event.target.name.value;
+  let minCust = event.target.minCust.value;
+  let maxCust = event.target.maxCust.value;
+  let avgSales = event.target.avgSales.value;
+  new Store(name, minCust, maxCust, avgSales);
+  event.target.reset();
+  allStores[allStores.length - 1].render();
+}),
+  Store.prototype.renderHeader();
 Store.prototype.renderAll();
 Store.prototype.renderFooter();

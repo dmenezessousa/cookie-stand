@@ -18,12 +18,35 @@
     </nav>
     <main>
      <a href="index.html">Back Home</a>
+     <div>
+        <fieldset id="store_form">
+          <legend>Add New Store</legend>
+          <form id="addStore_form">
+            <section>
+              <input type="text" name="storeName" id="storeName" placeholder="Store Name"/>
+            </section>
+            <section>
+              <input type="number" name="minCust" id="minCust" placeholder="minCust"/>
+            </section>
+            <section>
+              <input type="number" name="maxCust" id="maxCust" placeholder="maxCust"/>
+            </section>
+            <section>
+              <input type="number" name="avgSales" id="avgSales" placeholder="avgSales"/>
+            </section>
+            <button class="form_button" type="submit" name="submit">Add Store</button>
+          </form>
+        </fieldset>
+     </div>
+     <div>
+      <h1>Sales</h1>
       <table id="salesperhour">
         <thead id="hours"></thead>
         <tbody id="allStores"></tbody>
         <tfoot id="total"></tfoot>
         </tfoot>
       </table>
+     </div>
     </main>
     <footer>
       <div>
