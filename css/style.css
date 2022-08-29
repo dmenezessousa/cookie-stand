@@ -47,7 +47,7 @@ header {
   justify-content: space-between;
 }
 header h1 {
-  color: #dbecf8;
+  color: blue;
   text-shadow: 2px 2px black;
   font-size: 50px;
   z-index: 10;
@@ -169,5 +169,5 @@ footer div {
 }
 
 .menu-p {
-  margin-left: 12vh;
+  margin-left: 8vh;
 }
